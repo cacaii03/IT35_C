@@ -122,3 +122,18 @@ document.querySelectorAll('.sidebar button').forEach(btn => {
     });
   }
 });
+
+// Search functionality
+const searchBar = document.querySelector('.search-bar');
+searchBar.addEventListener('input', function() {
+  const query = this.value.toLowerCase();
+  document.querySelectorAll('.movie-card').forEach(card => {
+    const title = card.querySelector('.movie-title').textContent.toLowerCase();
+    const desc = card.querySelector('.movie-desc').textContent.toLowerCase();
+    if (title.includes(query) || desc.includes(query)) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+});
