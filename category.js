@@ -1,3 +1,29 @@
+function openMovieModal(card) {
+  const modal = document.getElementById('movie-modal');
+  modal.querySelector('.modal-image').src = card.querySelector('.movie-thumb').src;
+  modal.querySelector('.modal-title').textContent = card.querySelector('.movie-title').textContent;
+  modal.querySelector('.modal-desc').textContent = card.querySelector('.movie-desc').textContent;
+  modal.querySelector('.modal-rating').textContent = card.querySelector('.movie-rating').textContent;
+  modal.style.display = 'flex';
+}
+
+document.querySelectorAll('.watch-btn').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    const card = this.closest('.movie-card');
+    openMovieModal(card);
+    e.stopPropagation();
+  });
+});
+
+document.querySelector('.modal-close').addEventListener('click', function() {
+  document.getElementById('movie-modal').style.display = 'none';
+});
+
+document.getElementById('movie-modal').addEventListener('click', function(e) {
+  if (e.target === this) {
+    this.style.display = 'none';
+  }
+});
 document.querySelector('.category-dropdown').addEventListener('change', function() {
   const value = this.value;
   const cards = document.querySelectorAll('.movie-card');
