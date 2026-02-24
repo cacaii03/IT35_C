@@ -1,3 +1,76 @@
+.main-hr {
+  border: none;
+  border-top: 2px solid #ffd700;
+  margin: 32px 0 24px 0;
+}
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  margin: 0 auto 40px auto;
+  max-width: 1200px;
+}
+.movie-desc {
+  color: #ffd700cc;
+  font-size: 0.98em;
+  margin-bottom: 8px;
+  text-align: center;
+  min-height: 48px;
+}
+.movie-card {
+  background: #14285e;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px #0005;
+  padding: 18px 12px 20px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.movie-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 24px #ffd70055;
+}
+.movie-thumb {
+  width: 100%;
+  max-width: 160px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px #0004;
+}
+.movie-title {
+  color: #ffd700;
+  font-size: 1.08em;
+  font-weight: 600;
+  margin-bottom: 6px;
+  text-align: center;
+}
+.movie-rating {
+  color: #ffd700;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+.watch-btn {
+  background: linear-gradient(90deg, #ffd700 60%, #18306b 100%);
+  color: #10204b;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 22px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #0003;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.1s;
+}
+.watch-btn:hover {
+  background: linear-gradient(90deg, #18306b 60%, #ffd700 100%);
+  color: #ffd700;
+  box-shadow: 0 4px 16px #ffd70055;
+  transform: translateY(-2px) scale(1.04);
+}
 .slider-container {
   width: 100%;
   max-width: 6000px;
@@ -29,8 +102,11 @@ body {
   padding: 16px 32px;
   box-shadow: 0 4px 16px 0 rgba(16,32,75,0.4);
   border-bottom: 2px solid #ffd70033;
-  position: relative;
-  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
   text-shadow: 0 2px 8px #000a;
 }
 .header img {
@@ -57,6 +133,7 @@ body {
   gap: 16px;
   box-shadow: 2px 0 16px 0 #0006;
   border-right: 2px solid #ffd70033;
+  z-index: 99;
 }
 .sidebar button {
   background: linear-gradient(90deg, #18306b 60%, #ffd70022 100%);
@@ -102,7 +179,7 @@ body {
 }
 .main-content {
   margin-left: 220px;
-  padding: 40px 32px 70px 32px;
+  padding: 112px 32px 70px 32px;
   min-height: 400px;
   color: #ffd700;
   font-size: 1.15em;
